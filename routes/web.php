@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UserProfileController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -44,3 +45,15 @@ Route::get('/articles/{id}', function ($id) {
 Route::get('/user/{name?}', function ($name = "John") {
     return 'Nama saya ' . $name;
 });
+
+// Route::get('/user/profile', function () {
+//     return 'Ini adalah profile pengguna';
+// })->name('profile');
+
+// Route::get('/user/profile', [UserProfileController::class, 'show'])->name('profile');
+
+// // Generating URLs...
+// $url = route('profile');
+
+// // Generating Redirects...
+// return redirect()->route('profile');

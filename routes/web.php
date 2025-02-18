@@ -22,11 +22,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [HomeController::class, 'index']);
+Route::get('/', HomeController::class);
 
-Route::get('/about', [AboutController::class, 'index']);
+Route::get('/about', AboutController::class);
 
-Route::get('/articles/{id}', [ArticleController::class, 'show']);
+Route::get('/articles/{id}', ArticleController::class);
 
 Route::get('/hello', function () {
     return 'Hello World!';
@@ -60,15 +60,15 @@ Route::get('/user/profile', [UserProfileController::class, 'show'])->name('profi
 // // Generating Redirects...
 // return redirect()->route('profile');
 
-Route::middleware(['first', 'second'])->group(function () {
-    Route::get('/', function () {
-        // Uses first & second middleware...
-    });
+// Route::middleware(['first', 'second'])->group(function () {
+//     Route::get('/', function () {
+//         // Uses first & second middleware...
+//     });
 
-    Route::get('/user/profile', function () {
-        // Uses first & second middleware...
-    });
-});
+//     Route::get('/user/profile', function () {
+//         // Uses first & second middleware...
+//     });
+// });
 
 Route::domain('{account}.example.com')->group(function () {
     Route::get('user/{id}', function ($account, $id) {

@@ -5,6 +5,7 @@ use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\PhotoController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\UserProfileController;
@@ -94,3 +95,16 @@ Route::view('/welcome', 'welcome');
 Route::view('/welcome', 'welcome', ['name' => 'Taylor']);
 
 Route::get('/hello', [WelcomeController::class, 'hello']);
+
+Route::resource('photos', PhotoController::class);
+
+// Route::resource('photos', PhotoController::class)->only([
+//     'index',
+//     'show'
+// ]);
+// Route::resource('photos', PhotoController::class)->except([
+//     'create',
+//     'store',
+//     'update',
+//     'destroy'
+// ]);

@@ -108,3 +108,7 @@ Route::resource('photos', PhotoController::class);
 //     'update',
 //     'destroy'
 // ]);
+
+Route::get('/greeting', function () {
+    return view('hello', ['name' => 'Andi']);
+});

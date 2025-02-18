@@ -110,5 +110,5 @@ Route::resource('photos', PhotoController::class);
 // ]);
 
 Route::get('/greeting', function () {
-    return view('hello', ['name' => 'Andi']);
+    return view('blog.hello', ['name' => 'Andi']);
 });
